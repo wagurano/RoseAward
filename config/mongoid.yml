@@ -1,0 +1,40 @@
+development:
+  sessions:
+    default:
+      database: rose_award_development
+      hosts:
+        - localhost:27017
+      options:
+        max_retries: 20
+        retry_interval: 0.25
+        pool_size: 5
+        pool_timeout: 0.5
+        timeout: 5
+        refresh_interval: 300
+  options:
+test:
+  sessions:
+    default:
+      database: rose_award_test
+      hosts:
+        - localhost:27017
+      options:
+        read: primary
+        # In the test environment we lower the retries and retry interval to
+        # low amounts for fast failures.
+        max_retries: 1
+        retry_interval: 0
+production:
+  sessions:
+    default:
+      database: rose_award_production
+      hosts:
+        - localhost:27017
+      options:
+        max_retries: 20
+        retry_interval: 0.25
+        pool_size: 5
+        pool_timeout: 0.5
+        timeout: 5
+        refresh_interval: 300
+  options:
